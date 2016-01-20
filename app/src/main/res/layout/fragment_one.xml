@@ -20,21 +20,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="red"
-        android:id="@+id/display_red"
+        android:text="red_from_girls"
+        android:id="@+id/red_from_girls"
         android:layout_below="@+id/current_user"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_toRightOf="@+id/linear2"
+        android:layout_toEndOf="@+id/linear2" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="yellow"
-        android:id="@+id/display_yellow"
-        android:layout_alignTop="@+id/display_red"
-        android:layout_toRightOf="@+id/current_user"
-        android:layout_toEndOf="@+id/current_user" />
+        android:text="yellow_form_girls"
+        android:id="@+id/yellow_form_girls"
+        android:layout_below="@+id/red_from_girls"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 
     <LinearLayout
@@ -44,8 +44,8 @@
         android:visibility="visible"
         android:id="@+id/linear"
         android:layout_below="@+id/send_flower"
-        android:layout_toRightOf="@+id/linear2"
-        android:layout_toEndOf="@+id/linear2">
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
         <AutoCompleteTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -112,9 +112,9 @@
         android:text="send flowers"
         android:id="@+id/send_flower"
         android:onClick="send_flowers"
-        android:layout_below="@+id/display_yellow"
-        android:layout_toLeftOf="@+id/received_flowers"
-        android:layout_toStartOf="@+id/received_flowers" />
+        android:layout_alignTop="@+id/received_flowers"
+        android:layout_toRightOf="@+id/yellow_form_girls"
+        android:layout_toEndOf="@+id/yellow_form_girls" />
 
     <Button
         android:layout_width="wrap_content"
@@ -122,9 +122,7 @@
         android:text="received flowers"
         android:id="@+id/received_flowers"
         android:onClick="received_flowers"
-        android:layout_marginRight="27dp"
-        android:layout_marginEnd="27dp"
-        android:layout_alignTop="@+id/send_flower"
+        android:layout_below="@+id/yellow_from_boys"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
@@ -146,6 +144,26 @@
             android:layout_centerInParent="true" />
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="yellow_from_boys"
+        android:id="@+id/yellow_from_boys"
+        android:layout_below="@+id/yellow_form_girls"
+        android:layout_alignRight="@+id/red_from_boys"
+        android:layout_alignEnd="@+id/red_from_boys" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="red_from_boys"
+        android:id="@+id/red_from_boys"
+        android:layout_above="@+id/yellow_from_boys"
+        android:layout_alignRight="@+id/received_flowers"
+        android:layout_alignEnd="@+id/received_flowers" />
 
 
 </RelativeLayout>

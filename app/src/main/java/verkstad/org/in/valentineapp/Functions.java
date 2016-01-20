@@ -35,12 +35,6 @@ public class Functions {
         void onSuccess(int size);
     }
 
-    public interface VolleyCallback1{
-        void onSuccess(String[] result);
-    }
-
-
-
     // Sending rose
     static String sender,receiver,red_rose,yellow_rose,anonymous,message;
     public void send(Context context1,String sender1,String receiver1, String red_rose1,String yellow_rose1,String anonymous1,String message1){
@@ -94,7 +88,7 @@ public class Functions {
     }
 
     int size_json;
-    String[] sender_json,receiver_json,red_rose_json,yellow_rose_json,message_json;
+    String[] sender_json,receiver_json,red_rose_json,yellow_rose_json,message_json,anonymous_json;
     public int count_roses(Context context1,final String name, final VolleyCallback callback){
 
 
@@ -110,7 +104,7 @@ public class Functions {
                     //Toast.makeText(context, "checking",Toast.LENGTH_LONG).show();
                     JSONArray jsonArray = new JSONArray(s);
 
-                    sender_json=new String[jsonArray.length()];
+                    sender_json=new String[jsonArray.length()];  anonymous_json=new String[jsonArray.length()];
                     receiver_json=new String[jsonArray.length()];  red_rose_json=new String[jsonArray.length()];
                     yellow_rose_json=new String[jsonArray.length()]; message_json=new String[jsonArray.length()];
 
@@ -121,6 +115,7 @@ public class Functions {
                         red_rose_json[i]=n.getString("red_roses");
                         yellow_rose_json[i]=n.getString("yellow_roses");
                         message_json[i]=n.getString("message");
+                        anonymous_json[i]=n.getString("anonymous");
                     }
                     // Toast.makeText(context,"arrays yrr",Toast.LENGTH_LONG).show();
 
